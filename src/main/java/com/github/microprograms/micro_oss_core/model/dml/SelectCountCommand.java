@@ -1,10 +1,8 @@
 package com.github.microprograms.micro_oss_core.model.dml;
 
-import com.github.microprograms.micro_oss_core.model.Where;
-
 public class SelectCountCommand implements ReadCommand {
     private String tableName;
-    private Where where;
+    private Condition where;
 
     public String getTableName() {
         return tableName;
@@ -14,11 +12,11 @@ public class SelectCountCommand implements ReadCommand {
         this.tableName = tableName;
     }
 
-    public Where getWhere() {
+    public Condition getWhere() {
         return where;
     }
 
-    public void setWhere(Where where) {
+    public void setWhere(Condition where) {
         this.where = where;
     }
 }

@@ -2,12 +2,10 @@ package com.github.microprograms.micro_oss_core.model.dml;
 
 import java.util.List;
 
-import com.github.microprograms.micro_oss_core.model.Where;
-
 public class SelectCommand implements ReadCommand {
     private String tableName;
     private List<String> fieldNames;
-    private Where where;
+    private Condition where;
     private LeftJoin leftJoin;
     private List<Sort> sorts;
     private PagerRequest pager;
@@ -28,11 +26,11 @@ public class SelectCommand implements ReadCommand {
         this.fieldNames = fieldNames;
     }
 
-    public Where getWhere() {
+    public Condition getWhere() {
         return where;
     }
 
-    public void setWhere(Where where) {
+    public void setWhere(Condition where) {
         this.where = where;
     }
 
@@ -62,9 +60,9 @@ public class SelectCommand implements ReadCommand {
 
     public static class LeftJoin {
         private String tableName;
-        private Where condition;
+        private Condition condition;
 
-        public LeftJoin(String tableName, Where condition) {
+        public LeftJoin(String tableName, Condition condition) {
             this.tableName = tableName;
             this.condition = condition;
         }
@@ -77,11 +75,11 @@ public class SelectCommand implements ReadCommand {
             this.tableName = tableName;
         }
 
-        public Where getCondition() {
+        public Condition getCondition() {
             return condition;
         }
 
-        public void setCondition(Where condition) {
+        public void setCondition(Condition condition) {
             this.condition = condition;
         }
     }

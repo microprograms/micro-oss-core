@@ -3,12 +3,11 @@ package com.github.microprograms.micro_oss_core.model.dml;
 import java.util.List;
 
 import com.github.microprograms.micro_oss_core.model.Field;
-import com.github.microprograms.micro_oss_core.model.Where;
 
 public class UpdateCommand implements WriteCommand {
     private String tableName;
     private List<Field> fields;
-    private Where where;
+    private Condition where;
 
     public String getTableName() {
         return tableName;
@@ -26,11 +25,11 @@ public class UpdateCommand implements WriteCommand {
         this.fields = fields;
     }
 
-    public Where getWhere() {
+    public Condition getWhere() {
         return where;
     }
 
-    public void setWhere(Where where) {
+    public void setWhere(Condition where) {
         this.where = where;
     }
 }
