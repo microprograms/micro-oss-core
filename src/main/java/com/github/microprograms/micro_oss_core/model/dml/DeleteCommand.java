@@ -2,7 +2,7 @@ package com.github.microprograms.micro_oss_core.model.dml;
 
 import com.github.microprograms.micro_oss_core.model.Where;
 
-public class DeleteCommand {
+public class DeleteCommand implements WriteCommand {
     private String tableName;
     private Where where;
 

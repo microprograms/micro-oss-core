@@ -10,6 +10,7 @@ import com.github.microprograms.micro_oss_core.model.dml.InsertCommand;
 import com.github.microprograms.micro_oss_core.model.dml.SelectCommand;
 import com.github.microprograms.micro_oss_core.model.dml.SelectCountCommand;
 import com.github.microprograms.micro_oss_core.model.dml.UpdateCommand;
+import com.github.microprograms.micro_oss_core.model.dml.WriteCommand;
 
 public interface MicroOssProvider {
     void createTable(CreateTableCommand command);
@@ -25,4 +26,6 @@ public interface MicroOssProvider {
     int selectCount(SelectCountCommand command);
 
     int updateObject(UpdateCommand command);
+
+    void transaction(List<WriteCommand> commands);
 }

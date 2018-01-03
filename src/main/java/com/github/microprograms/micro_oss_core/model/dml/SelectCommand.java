@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.github.microprograms.micro_oss_core.model.Where;
 
-public class SelectCommand {
+public class SelectCommand implements ReadCommand {
     private String tableName;
     private List<String> fieldNames;
     private Where where;

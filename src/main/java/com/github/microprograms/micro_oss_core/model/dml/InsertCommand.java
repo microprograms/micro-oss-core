@@ -2,7 +2,7 @@ package com.github.microprograms.micro_oss_core.model.dml;
 
 import com.github.microprograms.micro_oss_core.model.Entity;
 
-public class InsertCommand {
+public class InsertCommand implements WriteCommand {
     private Entity entity;
 
     public Entity getEntity() {

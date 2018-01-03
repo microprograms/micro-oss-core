@@ -2,7 +2,7 @@ package com.github.microprograms.micro_oss_core.model.dml;
 
 import com.github.microprograms.micro_oss_core.model.Where;
 
-public class SelectCountCommand {
+public class SelectCountCommand implements ReadCommand {
     private String tableName;
     private Where where;
 

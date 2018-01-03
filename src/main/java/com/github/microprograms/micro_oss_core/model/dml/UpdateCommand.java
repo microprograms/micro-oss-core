@@ -5,7 +5,7 @@ import java.util.List;
 import com.github.microprograms.micro_oss_core.model.Field;
 import com.github.microprograms.micro_oss_core.model.Where;
 
-public class UpdateCommand {
+public class UpdateCommand implements WriteCommand {
     private String tableName;
     private List<Field> fields;
     private Where where;
