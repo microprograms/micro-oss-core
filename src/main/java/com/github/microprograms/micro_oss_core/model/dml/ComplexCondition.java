@@ -28,6 +28,10 @@ public class ComplexCondition extends Condition {
         this.conditions = conditions;
     }
 
+    public static ComplexCondition build(TypeEnum type, List<Condition> conditions) {
+        return new ComplexCondition(type, conditions);
+    }
+
     public static enum TypeEnum {
         and, or;
 

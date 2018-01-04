@@ -24,4 +24,8 @@ public class Condition {
     public void setValue(Object value) {
         this.value = value;
     }
+
+    public static Condition build(String key, Object value) {
+        return new Condition(key, value);
+    }
 }
