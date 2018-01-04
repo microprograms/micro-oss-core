@@ -7,6 +7,10 @@ public class MicroOssException extends Exception {
         super(message);
     }
 
+    public MicroOssException(Throwable cause) {
+        super(cause);
+    }
+
     public MicroOssException(String message, Throwable cause) {
         super(message, cause);
     }

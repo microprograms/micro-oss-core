@@ -11,7 +11,6 @@ import com.github.microprograms.micro_oss_core.model.dml.InsertCommand;
 import com.github.microprograms.micro_oss_core.model.dml.SelectCommand;
 import com.github.microprograms.micro_oss_core.model.dml.SelectCountCommand;
 import com.github.microprograms.micro_oss_core.model.dml.UpdateCommand;
-import com.github.microprograms.micro_oss_core.model.dml.WriteCommand;
 
 public interface MicroOssProvider {
     void createTable(CreateTableCommand command) throws MicroOssException;
@@ -28,5 +27,5 @@ public interface MicroOssProvider {
 
     int updateObject(UpdateCommand command) throws MicroOssException;
 
-    void transaction(List<WriteCommand> commands) throws MicroOssException;
+    Transaction beginTransaction() throws MicroOssException;
 }
