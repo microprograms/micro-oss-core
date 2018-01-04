@@ -6,6 +6,13 @@ public class FieldDefinition {
     private Object defaultValue;
     private int primaryKey;
 
+    public FieldDefinition(String name, String type, Object defaultValue, int primaryKey) {
+        this.name = name;
+        this.type = type;
+        this.defaultValue = defaultValue;
+        this.primaryKey = primaryKey;
+    }
+
     public String getName() {
         return name;
     }

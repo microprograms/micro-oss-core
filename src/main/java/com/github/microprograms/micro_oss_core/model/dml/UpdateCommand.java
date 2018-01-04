@@ -9,6 +9,12 @@ public class UpdateCommand implements WriteCommand {
     private List<Field> fields;
     private Condition where;
 
+    public UpdateCommand(String tableName, List<Field> fields, Condition where) {
+        this.tableName = tableName;
+        this.fields = fields;
+        this.where = where;
+    }
+
     public String getTableName() {
         return tableName;
     }

@@ -5,6 +5,10 @@ import com.github.microprograms.micro_oss_core.model.TableDefinition;
 public class CreateTableCommand {
     private TableDefinition tableDefinition;
 
+    public CreateTableCommand(TableDefinition tableDefinition) {
+        this.tableDefinition = tableDefinition;
+    }
+
     public TableDefinition getTableDefinition() {
         return tableDefinition;
     }

@@ -6,6 +6,11 @@ public class Entity {
     private String tableName;
     private List<Field> fields;
 
+    public Entity(String tableName, List<Field> fields) {
+        this.tableName = tableName;
+        this.fields = fields;
+    }
+
     public String getTableName() {
         return tableName;
     }

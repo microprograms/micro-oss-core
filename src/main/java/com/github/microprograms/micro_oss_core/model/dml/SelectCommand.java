@@ -10,6 +10,15 @@ public class SelectCommand implements ReadCommand {
     private List<Sort> sorts;
     private PagerRequest pager;
 
+    public SelectCommand(String tableName, List<String> fieldNames, Condition where, LeftJoin leftJoin, List<Sort> sorts, PagerRequest pager) {
+        this.tableName = tableName;
+        this.fieldNames = fieldNames;
+        this.where = where;
+        this.leftJoin = leftJoin;
+        this.sorts = sorts;
+        this.pager = pager;
+    }
+
     public String getTableName() {
         return tableName;
     }

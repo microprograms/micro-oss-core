@@ -6,6 +6,11 @@ public class TableDefinition {
     private String tableName;
     private List<FieldDefinition> fields;
 
+    public TableDefinition(String tableName, List<FieldDefinition> fields) {
+        this.tableName = tableName;
+        this.fields = fields;
+    }
+
     public String getTableName() {
         return tableName;
     }

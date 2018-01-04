@@ -6,6 +6,12 @@ public class ComplexCondition extends Condition {
     private Type type;
     private List<Condition> conditions;
 
+    public ComplexCondition(Type type, List<Condition> conditions) {
+        super(null, null);
+        this.type = type;
+        this.conditions = conditions;
+    }
+
     public Type getType() {
         return type;
     }

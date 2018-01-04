@@ -4,6 +4,11 @@ public class DeleteCommand implements WriteCommand {
     private String tableName;
     private Condition where;
 
+    public DeleteCommand(String tableName, Condition where) {
+        this.tableName = tableName;
+        this.where = where;
+    }
+
     public String getTableName() {
         return tableName;
     }

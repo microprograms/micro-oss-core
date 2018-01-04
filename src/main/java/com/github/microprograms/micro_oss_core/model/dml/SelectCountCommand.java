@@ -4,6 +4,11 @@ public class SelectCountCommand implements ReadCommand {
     private String tableName;
     private Condition where;
 
+    public SelectCountCommand(String tableName, Condition where) {
+        this.tableName = tableName;
+        this.where = where;
+    }
+
     public String getTableName() {
         return tableName;
     }
