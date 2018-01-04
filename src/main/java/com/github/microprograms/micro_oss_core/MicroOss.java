@@ -11,10 +11,10 @@ import com.github.microprograms.micro_oss_core.model.Field;
 import com.github.microprograms.micro_oss_core.model.dml.Condition;
 import com.github.microprograms.micro_oss_core.model.dml.DeleteCommand;
 import com.github.microprograms.micro_oss_core.model.dml.InsertCommand;
+import com.github.microprograms.micro_oss_core.model.dml.PagerRequest;
 import com.github.microprograms.micro_oss_core.model.dml.SelectCommand;
-import com.github.microprograms.micro_oss_core.model.dml.SelectCommand.PagerRequest;
-import com.github.microprograms.micro_oss_core.model.dml.SelectCommand.Sort;
 import com.github.microprograms.micro_oss_core.model.dml.SelectCountCommand;
+import com.github.microprograms.micro_oss_core.model.dml.Sort;
 import com.github.microprograms.micro_oss_core.model.dml.UpdateCommand;
 
 public class MicroOss {
