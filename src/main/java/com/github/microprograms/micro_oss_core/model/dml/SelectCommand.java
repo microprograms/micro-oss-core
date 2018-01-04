@@ -94,19 +94,19 @@ public class SelectCommand implements ReadCommand {
     }
 
     public static class Sort {
-        private String type;
+        private TypeEnum type;
         private String fieldName;
 
-        public Sort(String type, String fieldName) {
+        public Sort(TypeEnum type, String fieldName) {
             this.type = type;
             this.fieldName = fieldName;
         }
 
-        public String getType() {
+        public TypeEnum getType() {
             return type;
         }
 
-        public void setType(String type) {
+        public void setType(TypeEnum type) {
             this.type = type;
         }
 
