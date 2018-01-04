@@ -18,15 +18,15 @@ public interface MicroOssProvider extends Closeable {
 
     void dropTable(DropTableCommand command) throws MicroOssException;
 
-    int deleteObject(DeleteCommand command) throws MicroOssException;
+    long deleteObject(DeleteCommand command) throws MicroOssException;
 
-    int insertObject(InsertCommand command) throws MicroOssException;
+    long insertObject(InsertCommand command) throws MicroOssException;
 
     List<Entity> selectObject(SelectCommand command) throws MicroOssException;
 
-    int selectCount(SelectCountCommand command) throws MicroOssException;
+    long selectCount(SelectCountCommand command) throws MicroOssException;
 
-    int updateObject(UpdateCommand command) throws MicroOssException;
+    long updateObject(UpdateCommand command) throws MicroOssException;
 
     Transaction beginTransaction() throws MicroOssException;
 
