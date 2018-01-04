@@ -1,5 +1,6 @@
 package com.github.microprograms.micro_oss_core;
 
+import java.io.Closeable;
 import java.util.List;
 
 import com.github.microprograms.micro_oss_core.exception.MicroOssException;
@@ -12,7 +13,7 @@ import com.github.microprograms.micro_oss_core.model.dml.SelectCommand;
 import com.github.microprograms.micro_oss_core.model.dml.SelectCountCommand;
 import com.github.microprograms.micro_oss_core.model.dml.UpdateCommand;
 
-public interface MicroOssProvider {
+public interface MicroOssProvider extends Closeable {
     void createTable(CreateTableCommand command) throws MicroOssException;
 
     void dropTable(DropTableCommand command) throws MicroOssException;
@@ -28,4 +29,6 @@ public interface MicroOssProvider {
     int updateObject(UpdateCommand command) throws MicroOssException;
 
     Transaction beginTransaction() throws MicroOssException;
+
+    void close() throws MicroOssException;
 }
