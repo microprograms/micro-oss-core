@@ -104,4 +104,8 @@ public class MicroOss {
         List<Entity> entities = oss.selectObject(new SelectCommand(getTableName(clz), null, where, null, sorts, pager));
         return buildJavaObjectList(clz, entities);
     }
+
+    public static Transaction beginTransaction() throws MicroOssException {
+        return oss.beginTransaction();
+    }
 }
