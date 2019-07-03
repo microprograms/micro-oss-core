@@ -7,8 +7,9 @@ public class TableDefinition {
 	private String comment;
 	private List<FieldDefinition> fields;
 
-	public TableDefinition(String tableName, List<FieldDefinition> fields) {
+	public TableDefinition(String tableName, String comment, List<FieldDefinition> fields) {
 		this.tableName = tableName;
+		this.comment = comment;
 		this.fields = fields;
 	}
 

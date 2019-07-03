@@ -7,8 +7,9 @@ public class FieldDefinition {
 	private Object defaultValue;
 	private int primaryKey;
 
-	public FieldDefinition(String name, FieldTypeEnum type, Object defaultValue, int primaryKey) {
+	public FieldDefinition(String name, String comment, FieldTypeEnum type, Object defaultValue, int primaryKey) {
 		this.name = name;
+		this.comment = comment;
 		this.type = type;
 		this.defaultValue = defaultValue;
 		this.primaryKey = primaryKey;
