@@ -69,9 +69,17 @@ public class FieldDefinition {
 		 */
 		string_type("string", "String"),
 		/**
+		 * 文本
+		 */
+		text_type("text", "String"),
+		/**
+		 * SQL日期时间
+		 */
+		sqldatetime_type("sqldatetime", "java.sql.Date"),
+		/**
 		 * 日期时间
 		 */
-		datetime_type("datetime", "java.sql.Date");
+		datetime_type("datetime", "java.util.Date");
 
 		private String type;
 		private String javaType;
