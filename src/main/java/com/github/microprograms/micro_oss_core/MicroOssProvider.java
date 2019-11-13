@@ -11,11 +11,11 @@ import com.github.microprograms.micro_oss_core.model.dml.query.Sort;
 public interface MicroOssProvider {
 	int insertObject(Object object) throws MicroOssException;
 
-	int updateObject(Class<?> clz, List<Field> fields, Condition where);
+	int updateObject(Class<?> clz, List<Field> fields, Condition where) throws MicroOssException;
 
-	int deleteObject(Class<?> clz, Condition where);
+	int deleteObject(Class<?> clz, Condition where) throws MicroOssException;
 
-	int queryCount(Class<?> clz, Condition where);
+	int queryCount(Class<?> clz, Condition where) throws MicroOssException;
 
 	<T> QueryResult<T> query(Class<T> clz, Condition where) throws MicroOssException;
 
