@@ -1,4 +1,4 @@
-package com.github.microprograms.micro_oss_core.model.dml;
+package com.github.microprograms.micro_oss_core.model.dml.query;
 
 public class Sort {
     private TypeEnum type;

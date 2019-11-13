@@ -1,34 +1,31 @@
 package com.github.microprograms.micro_oss_core;
 
-import java.io.Closeable;
 import java.util.List;
 
 import com.github.microprograms.micro_oss_core.exception.MicroOssException;
-import com.github.microprograms.micro_oss_core.model.Entity;
-import com.github.microprograms.micro_oss_core.model.ddl.CreateTableCommand;
-import com.github.microprograms.micro_oss_core.model.ddl.DropTableCommand;
-import com.github.microprograms.micro_oss_core.model.dml.DeleteCommand;
-import com.github.microprograms.micro_oss_core.model.dml.InsertCommand;
-import com.github.microprograms.micro_oss_core.model.dml.SelectCommand;
-import com.github.microprograms.micro_oss_core.model.dml.SelectCountCommand;
-import com.github.microprograms.micro_oss_core.model.dml.UpdateCommand;
+import com.github.microprograms.micro_oss_core.model.Field;
+import com.github.microprograms.micro_oss_core.model.dml.query.Condition;
+import com.github.microprograms.micro_oss_core.model.dml.query.PagerRequest;
+import com.github.microprograms.micro_oss_core.model.dml.query.Sort;
 
-public interface MicroOssProvider extends Closeable {
-    void createTable(CreateTableCommand command) throws MicroOssException;
+public interface MicroOssProvider {
+	int insertObject(Object object) throws MicroOssException;
 
-    void dropTable(DropTableCommand command) throws MicroOssException;
+	int updateObject(Class<?> clz, List<Field> fields, Condition where);
 
-    long deleteObject(DeleteCommand command) throws MicroOssException;
+	int deleteObject(Class<?> clz, Condition where);
 
-    long insertObject(InsertCommand command) throws MicroOssException;
+	int queryCount(Class<?> clz, Condition where);
 
-    List<Entity> selectObject(SelectCommand command) throws MicroOssException;
+	<T> QueryResult<T> query(Class<T> clz, Condition where) throws MicroOssException;
 
-    long selectCount(SelectCountCommand command) throws MicroOssException;
+	<T> QueryResult<T> query(Class<T> clz, Condition where, List<Sort> sorts) throws MicroOssException;
 
-    long updateObject(UpdateCommand command) throws MicroOssException;
+	<T> QueryResult<T> query(Class<T> clz, Condition where, List<Sort> sorts, PagerRequest pager)
+			throws MicroOssException;
 
-    Transaction beginTransaction() throws MicroOssException;
+	<T> QueryResult<T> query(Class<T> clz, List<String> fieldNames, Condition where, List<Sort> sorts,
+			PagerRequest pager) throws MicroOssException;
 
-    void close() throws MicroOssException;
+	void execute(Transaction transaction) throws MicroOssException;
 }
