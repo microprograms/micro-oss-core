@@ -5,16 +5,17 @@ import java.util.List;
 import com.github.microprograms.micro_oss_core.exception.MicroOssException;
 import com.github.microprograms.micro_oss_core.model.Field;
 import com.github.microprograms.micro_oss_core.model.ddl.CreateTableCommand;
-import com.github.microprograms.micro_oss_core.model.ddl.DropTableCommand;
 import com.github.microprograms.micro_oss_core.model.dml.query.Condition;
 import com.github.microprograms.micro_oss_core.model.dml.query.PagerRequest;
 import com.github.microprograms.micro_oss_core.model.dml.query.Sort;
 
 public interface MicroOssProvider {
 
-	void createTable(CreateTableCommand command) throws MicroOssException;
+	MicroOssConfig getConfig();
 
-	void dropTable(DropTableCommand command) throws MicroOssException;
+	void createTable(Class<?> clz, CreateTableCommand command) throws MicroOssException;
+
+	void dropTable(Class<?> clz) throws MicroOssException;
 
 	int insertObject(Object object) throws MicroOssException;
 
