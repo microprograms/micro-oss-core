@@ -5,14 +5,21 @@ import java.util.List;
 public class SelectCommand {
 	private String tableName;
 	private List<String> fieldNames;
+	private List<Join> joins;
 	private Condition where;
 	private List<Sort> sorts;
 	private PagerRequest pager;
 
 	public SelectCommand(String tableName, List<String> fieldNames, Condition where, List<Sort> sorts,
 			PagerRequest pager) {
+		this(tableName, fieldNames, null, where, sorts, pager);
+	}
+
+	public SelectCommand(String tableName, List<String> fieldNames, List<Join> joins, Condition where, List<Sort> sorts,
+			PagerRequest pager) {
 		this.tableName = tableName;
 		this.fieldNames = fieldNames;
+		this.joins = joins;
 		this.where = where;
 		this.sorts = sorts;
 		this.pager = pager;
@@ -32,6 +39,14 @@ public class SelectCommand {
 
 	public void setFieldNames(List<String> fieldNames) {
 		this.fieldNames = fieldNames;
+	}
+
+	public List<Join> getJoins() {
+		return joins;
+	}
+
+	public void setJoins(List<Join> joins) {
+		this.joins = joins;
 	}
 
 	public Condition getWhere() {
