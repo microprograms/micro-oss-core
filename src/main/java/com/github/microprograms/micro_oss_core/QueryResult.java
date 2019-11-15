@@ -12,6 +12,10 @@ public class QueryResult<T> {
 	private List<Entity> entities;
 	private Class<T> clz;
 
+	public QueryResult(List<Entity> entities) {
+		this.entities = entities;
+	}
+
 	public QueryResult(List<Entity> entities, Class<T> clz) {
 		this.entities = entities;
 		this.clz = clz;
@@ -30,6 +34,10 @@ public class QueryResult<T> {
 			jsonArray.add(x.toJson());
 		}
 		return jsonArray;
+	}
+
+	public void setClz(Class<T> clz) {
+		this.clz = clz;
 	}
 
 	public T get() {
