@@ -32,12 +32,25 @@ public class Condition {
 		return new Condition(key, value);
 	}
 
+	public static RawCondition raw(String key, Object value) {
+		return new RawCondition(key, value);
+	}
+
 	public static ComplexCondition and(Condition... conditions) {
 		return ComplexCondition.and(conditions);
 	}
 
 	public static ComplexCondition or(Condition... conditions) {
 		return ComplexCondition.or(conditions);
+	}
+
+	public static class RawCondition extends Condition {
+		public RawCondition() {
+		}
+
+		public RawCondition(String key, Object value) {
+			super(key, value);
+		}
 	}
 
 	public static class ComplexCondition extends Condition {
