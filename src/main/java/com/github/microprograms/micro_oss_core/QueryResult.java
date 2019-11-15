@@ -36,10 +36,6 @@ public class QueryResult<T> {
 		return jsonArray;
 	}
 
-	public void setClz(Class<T> clz) {
-		this.clz = clz;
-	}
-
 	public T get() {
 		if (entities.isEmpty()) {
 			return null;
@@ -53,5 +49,17 @@ public class QueryResult<T> {
 			list.add(JSON.toJavaObject(x.toJson(), clz));
 		}
 		return list;
+	}
+
+	public List<Entity> getEntities() {
+		return entities;
+	}
+
+	public void setClz(Class<T> clz) {
+		this.clz = clz;
+	}
+
+	public Class<T> getClz() {
+		return clz;
 	}
 }
