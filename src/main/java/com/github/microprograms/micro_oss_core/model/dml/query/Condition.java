@@ -12,22 +12,6 @@ public class Condition {
 		this.value = value;
 	}
 
-	public String getKey() {
-		return key;
-	}
-
-	public void setKey(String key) {
-		this.key = key;
-	}
-
-	public Object getValue() {
-		return value;
-	}
-
-	public void setValue(Object value) {
-		this.value = value;
-	}
-
 	public static Condition build(String key, Object value) {
 		return new Condition(key, value);
 	}
@@ -42,6 +26,22 @@ public class Condition {
 
 	public static ComplexCondition or(Condition... conditions) {
 		return ComplexCondition.or(conditions);
+	}
+
+	public String getKey() {
+		return key;
+	}
+
+	public void setKey(String key) {
+		this.key = key;
+	}
+
+	public Object getValue() {
+		return value;
+	}
+
+	public void setValue(Object value) {
+		this.value = value;
 	}
 
 	public static class RawCondition extends Condition {
@@ -65,6 +65,18 @@ public class Condition {
 			this.conditions = conditions;
 		}
 
+		public static ComplexCondition build(TypeEnum type, Condition[] conditions) {
+			return new ComplexCondition(type, conditions);
+		}
+
+		public static ComplexCondition and(Condition... conditions) {
+			return new ComplexCondition(TypeEnum.and, conditions);
+		}
+
+		public static ComplexCondition or(Condition... conditions) {
+			return new ComplexCondition(TypeEnum.or, conditions);
+		}
+
 		public TypeEnum getType() {
 			return type;
 		}
@@ -79,18 +91,6 @@ public class Condition {
 
 		public void setConditions(Condition[] conditions) {
 			this.conditions = conditions;
-		}
-
-		public static ComplexCondition build(TypeEnum type, Condition[] conditions) {
-			return new ComplexCondition(type, conditions);
-		}
-
-		public static ComplexCondition and(Condition... conditions) {
-			return new ComplexCondition(TypeEnum.and, conditions);
-		}
-
-		public static ComplexCondition or(Condition... conditions) {
-			return new ComplexCondition(TypeEnum.or, conditions);
 		}
 
 		public static enum TypeEnum {

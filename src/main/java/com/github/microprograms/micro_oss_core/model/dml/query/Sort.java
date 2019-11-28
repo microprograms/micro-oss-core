@@ -9,6 +9,18 @@ public class Sort {
         this.fieldName = fieldName;
     }
 
+    public static Sort build(TypeEnum type, String fieldName) {
+        return new Sort(type, fieldName);
+    }
+
+    public static Sort asc(String fieldName) {
+        return new Sort(TypeEnum.asc, fieldName);
+    }
+
+    public static Sort desc(String fieldName) {
+        return new Sort(TypeEnum.desc, fieldName);
+    }
+
     public TypeEnum getType() {
         return type;
     }
@@ -23,14 +35,6 @@ public class Sort {
 
     public void setFieldName(String fieldName) {
         this.fieldName = fieldName;
-    }
-
-    public static Sort asc(String fieldName) {
-        return new Sort(TypeEnum.asc, fieldName);
-    }
-
-    public static Sort desc(String fieldName) {
-        return new Sort(TypeEnum.desc, fieldName);
     }
 
     public static enum TypeEnum {

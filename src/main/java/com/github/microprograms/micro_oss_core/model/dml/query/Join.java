@@ -11,6 +11,22 @@ public class Join {
 		this.condition = condition;
 	}
 
+	public static Join build(TypeEnum type, String tableName, Condition condition) {
+		return new Join(type, tableName, condition);
+	}
+
+	public static Join join(String tableName, Condition condition) {
+		return new Join(TypeEnum.join, tableName, condition);
+	}
+
+	public static Join leftJoin(String tableName, Condition condition) {
+		return new Join(TypeEnum.leftJoin, tableName, condition);
+	}
+
+	public static Join rightJoin(String tableName, Condition condition) {
+		return new Join(TypeEnum.rightJoin, tableName, condition);
+	}
+
 	public TypeEnum getType() {
 		return type;
 	}
@@ -36,7 +52,7 @@ public class Join {
 	}
 
 	public static enum TypeEnum {
-		join, leftJoin;
+		join, leftJoin, rightJoin;
 
 		public static TypeEnum parse(String type) {
 			for (TypeEnum x : values()) {
