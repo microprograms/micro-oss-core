@@ -12,6 +12,10 @@ import org.apache.commons.lang3.StringUtils;
 
 public class MicroOssUtils {
 
+	public static String getTableName(Class<?> clz) {
+		return clz.getSimpleName();
+	}
+
 	public static String getTableNameWithPrefix(Class<?> clz, String tablePrefix) {
 		return getTableNameWithPrefix(clz.getSimpleName(), tablePrefix);
 	}
@@ -23,12 +27,16 @@ public class MicroOssUtils {
 		return tablePrefix + tableName;
 	}
 
-	public static Entity buildEntity(Object javaObject, String tablePrefix) {
+	public static Entity buildEntityWithTablePrefix(Object javaObject, String tablePrefix) {
 		JSONObject json = (JSONObject) JSON.toJSON(javaObject);
 		List<Field> fields = new ArrayList<>();
 		for (String key : json.keySet()) {
 			fields.add(new Field(key, json.get(key)));
 		}
 		return new Entity(getTableNameWithPrefix(javaObject.getClass(), tablePrefix), fields);
+	}
+
+	public static Entity buildEntity(Object javaObject) {
+		return buildEntityWithTablePrefix(javaObject, null);
 	}
 }
