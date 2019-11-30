@@ -12,9 +12,18 @@ public class QueryResult<T> {
 	private List<Entity> entities;
 	private Class<T> clz;
 
+	public QueryResult(List<Entity> entities) {
+		this.entities = entities;
+	}
+
 	public QueryResult(List<Entity> entities, Class<T> clz) {
 		this.entities = entities;
 		this.clz = clz;
+	}
+
+	public QueryResult<T> clz(Class<T> clz) {
+		this.clz = clz;
+		return this;
 	}
 
 	public JSONObject asJsonObject() {
@@ -49,10 +58,6 @@ public class QueryResult<T> {
 
 	public List<Entity> getEntities() {
 		return entities;
-	}
-
-	public void setClz(Class<T> clz) {
-		this.clz = clz;
 	}
 
 	public Class<T> getClz() {
