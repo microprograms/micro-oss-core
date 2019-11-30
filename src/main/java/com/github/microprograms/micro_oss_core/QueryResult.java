@@ -8,7 +8,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.github.microprograms.micro_oss_core.model.Entity;
 
-public class QueryResult<T> {
+public class QueryResult<T extends Object> {
 	private List<Entity> entities;
 	private Class<T> clz;
 
