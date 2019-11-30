@@ -12,10 +12,6 @@ public class QueryResult<T> {
 	private List<Entity> entities;
 	private Class<T> clz;
 
-	public QueryResult(List<Entity> entities) {
-		this.entities = entities;
-	}
-
 	public QueryResult(List<Entity> entities, Class<T> clz) {
 		this.entities = entities;
 		this.clz = clz;
