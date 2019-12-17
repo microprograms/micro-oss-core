@@ -112,7 +112,7 @@ public class Condition {
 		}
 	}
 
-	public class Conditions {
+	public static class Conditions {
 		private List<Condition> conditions = new ArrayList<>();
 
 		public Conditions appendIfNotBlank(String key, Object value) {
@@ -129,9 +129,9 @@ public class Condition {
 			return this;
 		}
 
-        public boolean isEmpty() {
-            return conditions.isEmpty();
-        }
+		public boolean isEmpty() {
+			return conditions.isEmpty();
+		}
 
 		public List<Condition> getAll() {
 			return conditions;
