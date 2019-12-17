@@ -1,5 +1,10 @@
 package com.github.microprograms.micro_oss_core.model.dml.query;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.commons.lang3.StringUtils;
+
 public class Condition {
 	private String key;
 	private Object value;
@@ -104,6 +109,36 @@ public class Condition {
 				}
 				return null;
 			}
+		}
+	}
+
+	public class Conditions {
+		private List<Condition> conditions = new ArrayList<>();
+
+		public Conditions appendIfNotBlank(String key, Object value) {
+			if (value != null && StringUtils.isNotBlank(value.toString())) {
+				conditions.add(Condition.build(key, value));
+			}
+			return this;
+		}
+
+		public Conditions appendIfNotNull(String name, Object value) {
+			if (value != null) {
+				conditions.add(Condition.build(name, value));
+			}
+			return this;
+		}
+
+        public boolean isEmpty() {
+            return conditions.isEmpty();
+        }
+
+		public List<Condition> getAll() {
+			return conditions;
+		}
+
+		public Condition[] toArray() {
+			return conditions.toArray(new Condition[conditions.size()]);
 		}
 	}
 }

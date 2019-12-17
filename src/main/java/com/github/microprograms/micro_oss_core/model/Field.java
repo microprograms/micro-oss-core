@@ -56,6 +56,10 @@ public class Field {
             return this;
         }
 
+        public boolean isEmpty() {
+            return fields.isEmpty();
+        }
+
         public List<Field> getAll() {
             return fields;
         }
